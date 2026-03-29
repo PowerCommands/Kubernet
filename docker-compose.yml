@@ -16,6 +16,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.web
+    environment:
+      API_UPSTREAM: http://172.30.0.1:8080
     depends_on:
       - api
     networks:

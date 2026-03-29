@@ -31,7 +31,7 @@ build https://github.com/PowerCommands/Kubernet.git "kubernet" --dockerfile=Dock
 ```
 **API**
 ```
-build https://github.com/PowerCommands/Kubernet.git "kubernet" --dockerfile=Dockerfile.api --publish
+build https://github.com/PowerCommands/Kubernet.git "kubernet-api" --dockerfile=Dockerfile.api --publish
 ```
 
 ## Backend Endpoints
