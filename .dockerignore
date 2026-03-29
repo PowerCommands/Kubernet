@@ -1,0 +1,6 @@
+.git
+.codex
+**/bin
+**/obj
+**/node_modules
+**/dist

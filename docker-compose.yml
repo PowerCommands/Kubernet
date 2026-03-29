@@ -1,0 +1,32 @@
+services:
+  api:
+    container_name: kubernet-api-local
+    build:
+      context: .
+      dockerfile: Dockerfile.api
+    network_mode: host
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      KUBECONFIG: /kube/config
+    volumes:
+      - ${KUBECONFIG_PATH}:/kube/config:ro
+
+  web:
+    container_name: kubernet-dashboard-local
+    build:
+      context: .
+      dockerfile: Dockerfile.web
+    depends_on:
+      - api
+    networks:
+      kubernet-local:
+        ipv4_address: 172.30.0.2
+    ports:
+      - "8081:80"
+
+networks:
+  kubernet-local:
+    ipam:
+      config:
+        - subnet: 172.30.0.0/24
+          gateway: 172.30.0.1

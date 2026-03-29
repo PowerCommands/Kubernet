@@ -11,6 +11,17 @@
 *.sln.docstates
 *.env
 
+# Kubernetes and local credential files
+.kube/
+**/.kube/
+*kubeconfig*
+config.kube
+*.pem
+*.key
+appsettings.Local.json
+appsettings.*.local.json
+src/**/appsettings.Development.local.json
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
